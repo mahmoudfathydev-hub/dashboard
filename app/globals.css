@@ -20,7 +20,45 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, -20px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+.square-spin {
+  background:
+    linear-gradient(rgba(30, 27, 46, 0.6), rgba(30, 27, 46, 0.6)) padding-box,
+    conic-gradient(from 0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.4)) border-box;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  animation: square-rotate 22s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes square-rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
