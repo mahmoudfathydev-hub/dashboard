@@ -28,7 +28,7 @@ export default function Home() {
             {types.map(type => (
               <div
                 key={type.id}
-                className="group flex items-center justify-between bg-[#2A2738] border border-transparent rounded-xl p-3 sm:p-4 transition-all duration-300 hover:border-purple-500 hover:bg-[#312E45]"
+                className="group flex items-center justify-between bg-[#2A2738] border border-transparent rounded-xl p-3 sm:p-4 transition-all duration-300 hover:border-purple-500 hover:bg-[#312E45] cursor-pointer"
               >
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#1E1B2E]">
