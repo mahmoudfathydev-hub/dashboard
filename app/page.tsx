@@ -2,14 +2,13 @@ import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa";
 import BgCircle from "@/components/BgCircle";
 import BgSquare from "@/components/BgSquare";
-
+import Link from "next/link";
 export default function Home() {
   const types = [
     { id: 1, role: "Manager", desc: "View reports and project health", img: "/manager.png" },
     { id: 2, role: "Team Lead", desc: "Manage sprints and team velocity", img: "/teamlead.png" },
     { id: 3, role: "Engineer", desc: "Access tasks and code reviews", img: "/engineer.png" }
   ];
-
   return (
     <main className="min-h-screen flex items-center justify-center px-4 bg-[#131022]">
       <div className="relative w-full max-w-md sm:max-w-lg">
@@ -30,21 +29,23 @@ export default function Home() {
                 key={type.id}
                 className="group flex items-center justify-between bg-[#2A2738] border border-transparent rounded-xl p-3 sm:p-4 transition-all duration-300 hover:border-purple-500 hover:bg-[#312E45] cursor-pointer"
               >
-                <div className="flex items-center gap-3 sm:gap-4">
+                <Link href={`/LogIn?role=${type.role}`} className="flex items-center justify-between space-x-3 sm:space-x-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#1E1B2E]">
                     <Image src={type.img} alt={type.role} width={24} height={24} />
                   </div>
                   <div>
                     <h4 className="text-white font-medium sm:font-semibold text-sm sm:text-base">
-                      {type.role}
+                      {`Log In as a ${type.role}`}
                     </h4>
                     <p className="text-gray-400 text-xs sm:text-sm">
                       {type.desc}
                     </p>
                   </div>
                 </div>
+                </Link>
                 <FaChevronRight className="text-gray-400 transition-transform duration-300 group-hover:-translate-x-1" />
-              </div>
+                </div>
             ))}
           </div>
           <p className="text-gray-400 text-center text-xs sm:text-sm mt-6 sm:mt-8 hover:text-white transition cursor-pointer">
